@@ -22,15 +22,16 @@ I then write the following M code to define the function:
 
 Explanation of the M code:
 
-**(FileName as text):** Defines an input parameter for the function, expecting a *FileName*.
+- **(FileName as text):** Defines an input parameter for the function, expecting a *FileName*.
 
-**Folder.Files(DataSource):** Accesses the folder based on the folder path stored in the *DataSource* parameter.
+- **Folder.Files(DataSource):** Accesses the folder based on the folder path stored in the *DataSource* parameter.
 
-**each [Name] = FileName:** Filters the folder’s contents by comparing the file name with the provided *FileName*.
+- **each [Name] = FileName:** Filters the folder’s contents by comparing the file name with the provided *FileName*.
 
-**FileContent:** Returns the content of the filtered file as binary, which represents the raw CSV content before it is parsed.
+- **FileContent:** Returns the content of the filtered file as binary, which represents the raw CSV content before it is parsed.
 
 I then rename the function (e.g., **GetFile**).
+
 
 ![image](https://github.com/user-attachments/assets/0db5ad8b-90d0-4d90-a3b2-d19817dfde75)
 
@@ -50,15 +51,15 @@ To extract additional tables, such as the "products.csv" file, I use the same fu
 
 After invoking the function, I rename the queries from "Invoked Function" to something meaningful (e.g., Sales, Products).
 
-![image](https://github.com/user-attachments/assets/b1f69f11-a508-464f-8020-24dbded548d7)
+![image](https://github.com/user-attachments/assets/659c793b-6c75-43af-bd61-295cd4deab80)
 
 Extracting the tables by passing the *FileName* through the function ensures that both the Sales and Products tables are updated automatically whenever the *DataSource* value changes, without breaking.
 
 #### Best Practices
 
-- If files are moved or renamed, there’s a possibility of encountering errors if the column names change. Therefore, it’s essential to ensure column names remain consistent across data sources.
-  
-To handle potential changes in column names, I recommend using the Table.RenameColumns function to rename columns as needed or setting MissingField.Ignore in the arguments for handling missing fields.
+- If files are moved or renamed, there’s a possibility of encountering errors if the column names change. Therefore, it’s essential to ensure column names remain consistent across data sources.To handle
+
+potential changes in column names, I recommend using the Table.RenameColumns function to rename columns as needed or setting MissingField.Ignore in the arguments for handling missing fields.
 
 - With this setup, if the DataSource path is updated, all relevant queries (e.g., Sales and Products) will be automatically updated without the need for manual adjustments. This approach saves time and ensures
 
