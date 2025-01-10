@@ -58,9 +58,9 @@ Extracting the tables by passing the *FileName* through the function ensures tha
 
 #### Best Practices
 
-- If files are moved or renamed, there’s a possibility of encountering errors if the column names change. Therefore, it’s essential to ensure column names remain consistent across data sources.To handle potential changes in column names, I recommend using the Table.RenameColumns function to rename columns as needed or setting MissingField.Ignore in the arguments for handling missing fields.
+- If files are moved or renamed, there’s a possibility of encountering errors if the column names change. Therefore, it’s essential to ensure column names remain consistent across data sources.To handle potential changes in column names, I recommend using the *Table.RenameColumns* function to rename columns as needed or setting *MissingField.Ignore* in the arguments for handling missing fields.
 
-- With this setup, if the DataSource path is updated, all relevant queries (e.g., Sales and Products) will be automatically updated without the need for manual adjustments. This approach saves time and ensures consistency across multiple data sources.
+- With this setup, if the *DataSource* path is updated, all relevant queries (e.g., Sales and Products) will be automatically updated without the need for manual adjustments. This approach saves time and ensures consistency across multiple data sources.
 
 #### Please feel free to watch video below for walk-through:
 
