@@ -56,11 +56,17 @@ After invoking the function, I rename the queries from "Invoked Function" to som
 
 Extracting the tables by passing the *FileName* through the function ensures that both the Sales and Products tables are updated automatically whenever the *DataSource* value changes, without breaking.
 
+With this setup, if the *DataSource* path is updated, all relevant queries (e.g., Sales and Products) will be automatically updated without the need for manual adjustments. This approach saves time and ensures consistency across multiple data sources.
+
 #### Best Practices
 
-- If files are moved or renamed, there’s a possibility of encountering errors if the column names change. Therefore, it’s essential to ensure column names remain consistent across data sources.To handle potential changes in column names, I recommend using the *Table.RenameColumns* function to rename columns as needed or setting *MissingField.Ignore* in the arguments for handling missing fields.
+- If files are moved or renamed, there’s a possibility of encountering errors if the column names change. Therefore, it’s essential to ensure column names remain consistent across data sources. To handle potential changes in column names, I typically use the *Table.RenameColumns* function to rename columns as needed or setting *MissingField.Ignore* in the arguments for handling missing fields.
 
-- With this setup, if the *DataSource* path is updated, all relevant queries (e.g., Sales and Products) will be automatically updated without the need for manual adjustments. This approach saves time and ensures consistency across multiple data sources.
+- When it comes to configuring dynamic SQL queries in tools like Power Query or when creating SQL queries based on user input (such as table names, column names, or other parameters), there is a risk of **SQL injection** if the inputs are not validated. To mitigate this risk in Power Query or any other tool,I **ALWAYS** validate inputs, and ensure that only trusted parameters are used in constructing queries.
+
+a) For example, if I have to pass a table name through a function,I restrict the input to a pre-defined list of valid table names.
+
+b) When configuring query for the function using M code, I tend to use a stored procedure that accepts parameters, and then call it with Power Query without injecting raw SQL query into the code.
 
 #### Please feel free to watch video below for walk-through:
 
