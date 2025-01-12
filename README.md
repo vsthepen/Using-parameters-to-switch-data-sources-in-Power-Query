@@ -68,7 +68,7 @@ a) For example, if I have to pass a table name through a function,I restrict the
 
 b) When configuring query for the function using M code, I tend to use a stored procedure that accepts parameters, and then call it with Power Query without injecting raw SQL query into the code.
 
-#### Please feel free to watch video below for walk-through:
+#### Please feel free to watch video below for a walk-through:
 
 https://github.com/user-attachments/assets/939227e9-202a-4dea-8840-050349a50f3d
 
