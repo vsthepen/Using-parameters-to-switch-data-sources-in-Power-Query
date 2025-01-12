@@ -66,7 +66,7 @@ With this setup, if the *DataSource* path is updated, all relevant queries (e.g.
 
 a) For example, if I have to pass a table name through a function,I restrict the input to a pre-defined list of valid table names.
 
-b) When configuring query for the function using M code, I tend to use a stored procedure that accepts parameters, and then call it with Power Query without injecting user input into the query.
+b) When configuring query for the function using M code, I tend to use a stored procedure that accepts parameters, and then call it with Power Query without injecting user input into the query itself.
 
 #### Please feel free to watch video below for a walk-through:
 
